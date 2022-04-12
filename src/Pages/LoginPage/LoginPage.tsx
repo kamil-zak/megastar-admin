@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 import Form from 'components/Form/Form';
 import LabelBox from 'components/LabelBox/LabelBox';
 import LayoutItem from 'components/LayoutItem/LayoutItem';
-import { StyledLoginTab } from './LoginPage.styles';
+import { StyledLoginTab, StyledLogo } from './LoginPage.styles';
 import useAsyncThunk from 'hooks/useAsyncThunk';
 import Spinner from 'components/Spinner/Spinner';
 
@@ -36,23 +36,26 @@ const LoginPage = () => {
 
   if (!auth.isChecked) return <Spinner />;
   return (
-    <StyledLoginTab title="Zaloguj się">
-      <Form onSubmit={signIn}>
-        <Flex gap={50}>
-          <LabelBox text="Login">
-            <Input value={loginData.login} name="login" onChange={handleChange} autoFocus />
-          </LabelBox>
-          <LabelBox text="Hasło">
-            <Input type="password" name="password" value={loginData.password} onChange={handleChange} />
-          </LabelBox>
-          <LayoutItem align="center">
-            <Button loading={isLogging} icon={faSignInAlt}>
-              Zaloguj
-            </Button>
-          </LayoutItem>
-        </Flex>
-      </Form>
-    </StyledLoginTab>
+    <>
+      <StyledLogo />
+      <StyledLoginTab title="Zaloguj się">
+        <Form onSubmit={signIn}>
+          <Flex gap={50}>
+            <LabelBox text="Login">
+              <Input value={loginData.login} name="login" onChange={handleChange} autoFocus />
+            </LabelBox>
+            <LabelBox text="Hasło">
+              <Input type="password" name="password" value={loginData.password} onChange={handleChange} />
+            </LabelBox>
+            <LayoutItem align="center">
+              <Button loading={isLogging} icon={faSignInAlt}>
+                Zaloguj
+              </Button>
+            </LayoutItem>
+          </Flex>
+        </Form>
+      </StyledLoginTab>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import fullLogoImg from 'assets/img/fulllogo.svg';
 
 export const StyledLoginTab = styled.div`
   box-sizing: border-box;
@@ -9,4 +10,14 @@ export const StyledLoginTab = styled.div`
   background: ${({ theme }) => theme.colors.accentSuperLight};
   padding: 30px;
   border-radius: 15px;
+`;
+
+export const StyledLogo = styled.img.attrs(() => ({
+  src: fullLogoImg,
+}))`
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  margin: 50px auto;
+  filter: invert();
 `;
