@@ -1,0 +1,13 @@
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+export const StyledNavLink = styled(NavLink).attrs(({ theme }) => ({
+  style: ({ isActive }) => ({ color: theme.colors[isActive ? 'accent' : 'accentSuperLight'] }),
+}))`
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+`;
