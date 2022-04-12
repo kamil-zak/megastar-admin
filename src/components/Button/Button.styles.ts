@@ -23,9 +23,15 @@ export const StyledButton = styled.button<IStyledButtonProps>`
       color: transparent;
     `};
 
+  transition: filter 0.1s ease-in-out;
+  &:hover {
+    filter: brightness(110%);
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: auto;
+    filter: inherit;
   }
 `;
 
