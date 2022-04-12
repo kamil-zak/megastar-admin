@@ -33,6 +33,8 @@ api.interceptors.response.use(
   async (err: AxiosErrorWithRetry) => {
     if (err instanceof axios.Cancel) throw err;
     if (!err.response) throw new BaseError(CODES.NOCONNECTION, 'Nie udało się nawiązać połączenia');
+    if (typeof err.response.data === 'string')
+      throw new BaseError(CODES.DEFAULT, 'Nie można nawiązać połączenia z serwerem');
 
     const { code, message } = err.response.data.error;
 
