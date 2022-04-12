@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Flex from 'components/Flex/Flex';
-import Text from 'components/Text/Text';
+import { StyledText } from './LabelBox.styles';
 
 interface ILabelBoxProps {
   text: string;
@@ -10,9 +10,9 @@ interface ILabelBoxProps {
 const LabelBox: FC<ILabelBoxProps> = ({ text, small, children }) => {
   return (
     <Flex gap={0}>
-      <Text size={small ? 'xs' : 's'} color="accentSuperDark">
+      <StyledText size={small ? 'xs' : 's'} color="accentSuperDark">
         {text}
-      </Text>
+      </StyledText>
       {children}
     </Flex>
   );
