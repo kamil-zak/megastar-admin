@@ -1,5 +1,5 @@
 import { HTMLAttributes, useEffect, useState } from 'react';
-import { faImages, faInfoCircle, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faImages, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTable } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import NavigationLink from '../NavigationLink/NavigationLink';
@@ -37,7 +37,6 @@ const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
         </Text>
       </StyledLoginInfo>
       <Flex>
-        <NavigationLink icon={faInfoCircle} text="Informacje" to="/info" />
         <NavigationLink icon={faTable} text="Rozkład jazdy" to={ROUTES.timetable} />
         <NavigationLink icon={faImages} text="Galeria" to={ROUTES.albums} />
       </Flex>
