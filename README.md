@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# megastar-admin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is admin panel for transport company created by ReactJS with create-react-app. Application is communicating with express backend by REST API and gives functionality for authentication and managing all CRUD operations on data models. Application provides specific user interface for every data types.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+Demo is available in this location:
 
-### `npm start`
+[https://megastar.kamilzak.pl/admin](https://megastar.kamilzak.pl/admin)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+login: admin
+password: test123
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built with
 
-### `npm test`
+- **ReactJS**
+- **Typescript**
+- **Redux / Toolkit**
+- **React Router**
+- **Styled Components**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Authentication** - api requests are sending by [axios](https://www.npmjs.com/package/axios) with interceptor for authentication by token and automatic refresh token.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Toasts** - application shows user toast messages with any message returns from server. Redux is responsible for managing toasts messages.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Dynamic photo upload** - photos can be uploaded instead by choose from disk also by drag and drop feature.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Confirm modal** - application shows user confirm modal for important operations like deleting data.
 
-### `npm run eject`
+- **Drag and drop** - user can customize order of data by drag and drop. This feature is provided by [react-dnd](https://www.npmjs.com/package/react-dnd) library.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Responsive** - admin panel also can be used on mobile devices.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Linting and formating** - project includes configuration for [ESLint](https://www.npmjs.com/package/eslint) linter and [Prettier](https://www.npmjs.com/package/prettier) code formatter. This project includes this packages for use them in pre commit hook by [husky](https://www.npmjs.com/package/husky).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Automatic deployment** - Project uses [Github Actions](https://github.com/features/actions) for automation deployment on VPS server.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Development
 
-## Learn More
+Before run development server make sure that express server which provides api is actually running on localhost at port 5555
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run development server type:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm start
+
+```
+
+By default server starts at 3000 port.
+
+# Production
+
+To generate production build of application type:
+
+```sh
+npm run build
+```
+
+All files will be generated in _build_ directiory.
