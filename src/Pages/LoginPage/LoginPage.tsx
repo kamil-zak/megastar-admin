@@ -1,4 +1,4 @@
-import { ChangeEvent, useLayoutEffect } from 'react';
+import { ChangeEvent, useEffect, useLayoutEffect } from 'react';
 import { useState } from 'react';
 import { authCheck, authSignIn } from 'store/features/authSlice';
 import Input from 'components/Input/Input';
@@ -15,6 +15,8 @@ import { StyledLoginTab, StyledLogo } from './LoginPage.styles';
 import useAsyncThunk from 'hooks/useAsyncThunk';
 import Spinner from 'components/Spinner/Spinner';
 import Text from 'components/Text/Text';
+import CODES from 'constants/codes';
+import hasErrorCode from 'utils/hasErrorCode';
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ login: '', password: '' });
@@ -26,7 +28,11 @@ const LoginPage = () => {
     if (!auth.isChecked) dispatch(authCheck());
   }, [auth.isChecked, dispatch]);
 
-  const [signIn, { loading: isLogging }] = useAsyncThunk(authSignIn, loginData);
+  const [signIn, { loading: isLogging, error }] = useAsyncThunk(authSignIn, loginData);
+
+  useEffect(() => {
+    if (hasErrorCode(error, [CODES.LOGIN])) setLoginData((prev) => ({ ...prev, password: '' }));
+  }, [error]);
 
   const state = (useLocation().state || {}) as { pathname?: string };
   if (auth.user) return <Navigate to={state.pathname || '/'} />;
