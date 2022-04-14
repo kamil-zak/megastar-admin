@@ -25,7 +25,7 @@ const DateSelect = ({ date: { day, month }, onChange }: IDateSelectProps) => {
 
   return (
     <Wrapper>
-      <Select small onChange={handleDayChange} value={day}>
+      <Select onChange={handleDayChange} value={day}>
         <option value={-1}>Dzień</option>
         {days.map((day) => (
           <option key={day} value={day}>
@@ -33,7 +33,7 @@ const DateSelect = ({ date: { day, month }, onChange }: IDateSelectProps) => {
           </option>
         ))}
       </Select>
-      <StyledSelect small onChange={handleMonthChange} value={month} disabled={day < 0}>
+      <StyledSelect onChange={handleMonthChange} value={month} disabled={day < 0}>
         <option>Miesiąc</option>
         {availableMonths.map((month) => (
           <option key={month} value={month}>

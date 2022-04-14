@@ -23,9 +23,9 @@ const ForeclosureItem = ({ foreclosure }: { foreclosure: IForeclosureInfo }) => 
       <Flex>
         <Flex justifyContent="flex-end" alignItems="center" direction="row">
           <Text size="s">{foreclosure.symbol}</Text>
-          <FontAwesomeIcon icon={faLongArrowAltRight} size="2x"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faLongArrowAltRight} size="1x"></FontAwesomeIcon>
           <Text size="s">{foreclosure.description}</Text>
-          <FontAwesomeIcon icon={faCalendarDay} size="5x"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faCalendarDay} size="4x"></FontAwesomeIcon>
         </Flex>
         <Flex justifyContent="flex-end" direction="row">
           <Button danger loading={loading} onClick={confirmRemove}>

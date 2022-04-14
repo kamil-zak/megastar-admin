@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const Select = styled.select<{ small?: boolean }>`
-  padding: ${({ small }) => (small ? '10' : '15')}px;
-  font-size: ${({ small, theme }) => theme.fontSizes[small ? 'xs' : 's']};
-  background-color: ${({ theme }) => theme.colors.accentLight};
-  border: 1px solid ${({ theme }) => theme.colors.accentDark};
-  color: ${({ theme }) => theme.colors.accentDark};
+const Select = styled.select`
+  padding: 10px;
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  background-color: white;
+  border: 1px solid ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.primarySuperDark};
   border-radius: ${({ theme }) => theme.radius};
   appearance: button;
   -webkit-appearance: button;

@@ -1,10 +1,12 @@
 import { css } from 'styled-components';
 
 export const inputStyle = css`
-  background-color: ${({ theme }) => theme.colors.accentLight};
-  border: 1px solid ${({ theme }) => theme.colors.accentDark};
-  color: ${({ theme }) => theme.colors.accentDark};
+  background-color: white;
+  border: 1px solid ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.primarySuperDark};
   border-radius: ${({ theme }) => theme.radius};
+  padding: 10px;
+  font-size: ${({ theme }) => theme.fontSizes.xs};
 `;
 
 export const breakpoints = {

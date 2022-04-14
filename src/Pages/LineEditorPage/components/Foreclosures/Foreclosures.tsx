@@ -15,10 +15,14 @@ const Foreclosures = () => {
         <tbody>
           {foreclosures.map((foreclosure) => (
             <tr key={foreclosure._id}>
-              <td align="center">
-                <Text color="accentDark">{foreclosure.symbol}</Text>
+              <td>
+                <Text center color="accentDark">
+                  {foreclosure.symbol}
+                </Text>
               </td>
-              <td>{foreclosure.description}</td>
+              <td>
+                <Text size="xs">{foreclosure.description}</Text>
+              </td>
             </tr>
           ))}
         </tbody>

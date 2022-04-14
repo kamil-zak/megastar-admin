@@ -40,9 +40,9 @@ const DepartureEditor = ({ onClose, time, type, direction, id }: IDepartureEdito
   return (
     <Form onSubmit={handleSubmit}>
       <Flex gap={10} alignItems="center">
-        <Input small autoFocus {...timeInput} />
-        <LabelBox small text="Ograniczenia">
-          <Input small {...foreclosuresInput} />
+        <Input autoFocus {...timeInput} />
+        <LabelBox text="Ograniczenia">
+          <Input {...foreclosuresInput} />
         </LabelBox>
         <Button small type="submit">
           Zapisz

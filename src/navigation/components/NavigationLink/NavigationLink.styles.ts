@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledNavLink = styled(NavLink).attrs(({ theme }) => ({
-  style: ({ isActive }) => ({ color: theme.colors[isActive ? 'accent' : 'accentSuperLight'] }),
+  style: ({ isActive }) => ({ opacity: isActive ? '1' : '0.7' }),
 }))`
   font-size: ${({ theme }) => theme.fontSizes.base};
   padding-left: 20px;
@@ -10,4 +10,5 @@ export const StyledNavLink = styled(NavLink).attrs(({ theme }) => ({
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  color: ${({ theme }) => theme.colors.accentSuperLight};
 `;

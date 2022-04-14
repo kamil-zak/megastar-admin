@@ -17,7 +17,7 @@ const NewDay = ({ onClose }: { onClose: () => void }) => {
     onClose();
   };
   return (
-    <Select small onChange={handleChange}>
+    <Select onChange={handleChange}>
       <option>Wybierz...</option>
       {availableDays.map((day) => (
         <option key={day} value={day}>

@@ -3,8 +3,7 @@ import { inputStyle } from 'styles/common';
 
 const TextArea = styled.textarea`
   font-family: inherit;
-  padding: 15px;
-  font-size: ${({ theme }) => theme.fontSizes.s};
+  min-height: 80px;
   ${inputStyle}
 `;
 

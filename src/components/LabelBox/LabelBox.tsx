@@ -4,13 +4,12 @@ import { StyledText } from './LabelBox.styles';
 
 interface ILabelBoxProps {
   text: string;
-  small?: boolean;
 }
 
-const LabelBox: FC<ILabelBoxProps> = ({ text, small, children }) => {
+const LabelBox: FC<ILabelBoxProps> = ({ text, children }) => {
   return (
     <Flex gap={0}>
-      <StyledText size={small ? 'xs' : 's'} color="accentSuperDark">
+      <StyledText size="xs" color="primarySuperDark">
         {text}
       </StyledText>
       {children}

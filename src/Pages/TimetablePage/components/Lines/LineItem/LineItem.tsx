@@ -24,9 +24,9 @@ const LineItem = ({ line }: { line: ILineInfo }) => {
       <Flex>
         <Flex justifyContent="flex-end" alignItems="center" direction="row">
           <Text size="s">{line.entry}</Text>
-          <FontAwesomeIcon icon={faArrowsAltH} size="2x"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faArrowsAltH} size="1x"></FontAwesomeIcon>
           <Text size="s">{line.destination}</Text>
-          <FontAwesomeIcon icon={faClock} size="5x"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faClock} size="4x"></FontAwesomeIcon>
         </Flex>
         <Flex justifyContent="flex-end" direction="row">
           <Button danger loading={loading} onClick={confirmRemove}>

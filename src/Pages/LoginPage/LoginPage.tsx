@@ -14,6 +14,7 @@ import LayoutItem from 'components/LayoutItem/LayoutItem';
 import { StyledLoginTab, StyledLogo } from './LoginPage.styles';
 import useAsyncThunk from 'hooks/useAsyncThunk';
 import Spinner from 'components/Spinner/Spinner';
+import Text from 'components/Text/Text';
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ login: '', password: '' });
@@ -36,11 +37,19 @@ const LoginPage = () => {
 
   if (!auth.isChecked) return <Spinner />;
   return (
-    <>
+    <Flex alignItems="center">
       <StyledLogo />
       <StyledLoginTab title="Zaloguj się">
         <Form onSubmit={signIn}>
-          <Flex gap={50}>
+          <Flex gap={20}>
+            <Flex gap={5} alignItems="center">
+              <Text size="xl" color="accentSuperDark">
+                Witaj!
+              </Text>
+              <Text size="s" color="accentDark">
+                Aby kontynuować podaj login oraz hasło.
+              </Text>
+            </Flex>
             <LabelBox text="Login">
               <Input value={loginData.login} name="login" onChange={handleChange} autoFocus />
             </LabelBox>
@@ -55,7 +64,7 @@ const LoginPage = () => {
           </Flex>
         </Form>
       </StyledLoginTab>
-    </>
+    </Flex>
   );
 };
 

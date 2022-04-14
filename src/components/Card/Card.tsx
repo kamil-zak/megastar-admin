@@ -18,7 +18,7 @@ const Card = styled.div`
   padding: 20px;
   background: ${({ theme }) => theme.colors.primaryDark};
   border-radius: ${({ theme }) => theme.radius};
-  color: ${({ theme }) => theme.colors.accentSuperLight};
+  color: ${({ theme }) => theme.colors.primarySuperLight};
   ${topBar}
 `;
 

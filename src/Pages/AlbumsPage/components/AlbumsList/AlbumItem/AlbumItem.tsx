@@ -29,7 +29,7 @@ const AlbumItem = ({ album }: { album: IAlbumInfo }) => {
         <Flex justifyContent="flex-end" alignItems="center" direction="row">
           <Text size="s">{album.name}</Text>
           <LayoutItem mobileHidden>
-            <FontAwesomeIcon icon={faImages} size="5x" />
+            <FontAwesomeIcon icon={faImages} size="4x" />
           </LayoutItem>
         </Flex>
         <Flex justifyContent="flex-end" direction="row">
