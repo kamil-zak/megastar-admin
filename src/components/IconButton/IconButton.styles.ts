@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'styles/common';
 
 interface IWrapperProps {
   size: number;
@@ -16,7 +17,9 @@ export const Wrapper = styled.div<IWrapperProps>`
   border-radius: 50%;
   cursor: pointer;
 
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  ${breakpoints.md} {
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
   opacity: 0.8;
 
   &:hover {
