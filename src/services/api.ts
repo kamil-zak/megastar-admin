@@ -1,23 +1,22 @@
 import axios, { AxiosError } from 'axios';
 import CODES from 'constants/codes';
 import ENDPOINTS from 'constants/endpoints';
-import { IErrorResponse, IRefreshResponse, isSignInResponse } from 'interfaces/auth';
+import { IErrorResponse } from 'interfaces/auth';
 import BaseError from '../utils/BaseError';
-import { getToken, getRefreshToken, updateTokens } from './tokenService';
-
-type AxiosErrorWithRetry = { config: { _retry?: boolean } } & AxiosError<IErrorResponse>;
+import { getToken, setToken } from './tokenService';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers: { 'Content-Type': 'application/json' },
 });
 
 api.interceptors.request.use(
-  (config) => {
-    const token = getToken();
-    if (config.headers) config.headers['Authorization'] = `Bearer ${token}`;
+  async (config) => {
+    if (!config.url?.startsWith('/auth')) {
+      const token = await getToken();
+      if (!token) throw new BaseError(CODES.UNAUTHENTICATED);
+      if (config.headers) config.headers['Authorization'] = `Bearer ${token}`;
+    }
     return config;
   },
   (err) => {
@@ -27,31 +26,17 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    if (isSignInResponse(response.data)) updateTokens(response.data);
+    if (response.config.url === ENDPOINTS.LOGIN) setToken(response.data.token);
     return response;
   },
-  async (err: AxiosErrorWithRetry) => {
+  async (err: AxiosError<IErrorResponse>) => {
     if (err instanceof axios.Cancel) throw err;
+    if (err.code === CODES.UNAUTHENTICATED) throw err;
     if (!err.response) throw new BaseError(CODES.NOCONNECTION, 'Nie udało się nawiązać połączenia');
     if (typeof err.response.data === 'string')
       throw new BaseError(CODES.DEFAULT, 'Nie można nawiązać połączenia z serwerem');
 
     const { code, message } = err.response.data.error;
-
-    if (code === CODES.UNAUTHENTICATED && err.config.url !== ENDPOINTS.REFRESH && !err.config._retry) {
-      err.config._retry = true;
-
-      try {
-        const { data } = await api.post<IRefreshResponse>(ENDPOINTS.REFRESH, {
-          refreshToken: getRefreshToken(),
-        });
-        updateTokens({ token: data.token });
-        return api(err.config);
-      } catch (err) {
-        throw new BaseError(code, message);
-      }
-    }
-
     throw new BaseError(code, message);
   },
 );

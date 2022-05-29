@@ -21,8 +21,3 @@ export interface IErrorResponse {
 export interface IRefreshResponse {
   token: string;
 }
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function isSignInResponse(data: any): data is ISignInResponse {
-  return data.token && data.refreshToken;
-}

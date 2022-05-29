@@ -5,6 +5,7 @@ enum ENDPOINTS {
   LOGIN = '/auth/login',
   REFRESH = '/auth/refresh',
   CHECK = '/me',
+  LOGOUT = '/auth/logout',
 }
 
 export default ENDPOINTS;

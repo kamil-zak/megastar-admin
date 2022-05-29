@@ -3,7 +3,7 @@ import { isBaseError } from 'interfaces/common';
 import api from './api';
 import { ICheckLoginResponse, ISignInData, ISignInResponse } from 'interfaces/auth';
 import CODES from 'constants/codes';
-import { clearTokens } from './tokenService';
+import { setToken } from './tokenService';
 
 const authService = {
   async signIn(signInData: ISignInData) {
@@ -20,7 +20,7 @@ const authService = {
     }
   },
   async logout() {
-    clearTokens();
+    await api.get(ENDPOINTS.LOGOUT).then(() => setToken(''));
   },
 };
 
