@@ -5,7 +5,7 @@ import api from './api';
 
 const foreclosureService = {
   async getAll() {
-    const params = { fields: '_id,symbol,text' };
+    const params = { fields: '_id,symbol,description' };
     const { data } = await api.get<IForeclosureInfo[]>(ENDPOINTS.FORECLOSURES, { params });
     return data;
   },

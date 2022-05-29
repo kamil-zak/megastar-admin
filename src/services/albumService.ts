@@ -7,7 +7,7 @@ import { getThumbUrl } from 'constants/routes';
 
 const albumService = {
   async getAll() {
-    const params = {};
+    const params = { photosCount: 2 };
     const { data } = await api.get<IAlbumInfo[]>(ENDPOINTS.ALBUMS, { params });
     return data;
   },
