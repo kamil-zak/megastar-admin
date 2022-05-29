@@ -25,10 +25,10 @@ const ForeclosureItem = ({ foreclosure }: { foreclosure: IForeclosureInfo }) => 
           <Text size="s">{foreclosure.symbol}</Text>
           <FontAwesomeIcon icon={faLongArrowAltRight} size="1x"></FontAwesomeIcon>
           <Text size="s">{foreclosure.description}</Text>
-          <FontAwesomeIcon icon={faCalendarDay} size="4x"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faCalendarDay} size="3x"></FontAwesomeIcon>
         </Flex>
         <Flex justifyContent="flex-end" direction="row">
-          <Button danger loading={loading} onClick={confirmRemove}>
+          <Button danger bordered loading={loading} onClick={confirmRemove}>
             Usuń
           </Button>
           <Link to={`${ROUTES.foreclosures}/${foreclosure._id}`}>

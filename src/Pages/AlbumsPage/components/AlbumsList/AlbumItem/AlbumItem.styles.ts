@@ -26,10 +26,10 @@ export const FirstImage = styled.img`
   height: 105px;
   left: 20px;
   top: 20px;
-  border-radius: 10px;
   z-index: 2;
   transform: rotate(-10deg);
   border: 2px solid white;
+  box-shadow: ${({ theme }) => theme.shadow};
 `;
 
 export const SecondImage = styled.img`
@@ -38,8 +38,7 @@ export const SecondImage = styled.img`
   height: 105px;
   left: 60px;
   top: 20px;
-  border-radius: 10px;
   border: 2px solid white;
-
+  box-shadow: ${({ theme }) => theme.shadow};
   transform: rotate(10deg);
 `;

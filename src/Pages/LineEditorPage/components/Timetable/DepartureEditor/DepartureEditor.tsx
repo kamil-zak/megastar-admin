@@ -44,9 +44,7 @@ const DepartureEditor = ({ onClose, time, type, direction, id }: IDepartureEdito
         <LabelBox text="Ograniczenia">
           <Input {...foreclosuresInput} />
         </LabelBox>
-        <Button small type="submit">
-          Zapisz
-        </Button>
+        <Button type="submit">Zapisz</Button>
       </Flex>
     </Form>
   );

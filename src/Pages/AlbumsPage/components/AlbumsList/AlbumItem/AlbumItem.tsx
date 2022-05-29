@@ -33,7 +33,7 @@ const AlbumItem = ({ album }: { album: IAlbumInfo }) => {
           </LayoutItem>
         </Flex>
         <Flex justifyContent="flex-end" direction="row">
-          <Button danger loading={loading} onClick={confirmRemove}>
+          <Button danger bordered loading={loading} onClick={confirmRemove}>
             Usuń
           </Button>
           <Link to={`${ROUTES.albums}/${album._id}`}>

@@ -19,9 +19,7 @@ const NewDate = ({ onClose }: { onClose: () => void }) => {
   return (
     <Flex alignItems="center">
       <DateSelect date={date} onChange={setDate} />
-      <Button small onClick={handleSave}>
-        Zapisz
-      </Button>
+      <Button onClick={handleSave}>Zapisz</Button>
     </Flex>
   );
 };

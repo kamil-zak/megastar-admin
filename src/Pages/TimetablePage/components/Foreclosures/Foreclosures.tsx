@@ -29,7 +29,7 @@ const Foreclosures = () => {
         </Sortable>
       ))}
       {!foreclosures.length && (
-        <Text color="accentSuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Brak ograniczeń. Dodaj pierwsze!
         </Text>
       )}

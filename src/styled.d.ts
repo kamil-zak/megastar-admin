@@ -1,20 +1,6 @@
 import 'styled-components';
 
-type colors =
-  | 'primarySuperDark'
-  | 'primaryDark'
-  | 'primary'
-  | 'primaryLight'
-  | 'primarySuperLight'
-  | 'accentSuperDark'
-  | 'accentDark'
-  | 'accent'
-  | 'accentLight'
-  | 'accentSuperLight'
-  | 'dangerLight'
-  | 'danger'
-  | 'successLight'
-  | 'success';
+type colors = 'primaryDark' | 'primary' | 'primaryLight' | 'danger' | 'success';
 
 type fontSizes = 'xxs' | 'xs' | 's' | 'base' | 'lg' | 'xl';
 
@@ -27,5 +13,6 @@ declare module 'styled-components' {
       [T in fontSizes]: string;
     };
     radius: string;
+    shadow: string;
   }
 }

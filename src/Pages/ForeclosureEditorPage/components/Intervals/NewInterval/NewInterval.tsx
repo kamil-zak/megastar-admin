@@ -26,9 +26,7 @@ const NewInterval = ({ onClose }: { onClose: () => void }) => {
       <LabelBox text="Do">
         <DateSelect date={toDate} onChange={setToDate} />
       </LabelBox>
-      <Button small onClick={handleSave}>
-        Zapisz
-      </Button>
+      <Button onClick={handleSave}>Zapisz</Button>
     </Flex>
   );
 };

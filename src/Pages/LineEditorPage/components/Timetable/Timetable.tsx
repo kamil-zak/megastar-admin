@@ -8,36 +8,36 @@ const Timetable = () => {
   return (
     <Flex gap={60}>
       <Flex alignItems="center">
-        <Text color="accentSuperDark">
+        <Text color="primaryDark">
           {line.entry} - {line.destination}
         </Text>
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Dni tygodnia
         </Text>
         <DeparturesList type="week" direction="destination" />
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Sobota
         </Text>
         <DeparturesList type="saturday" direction="destination" />
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Niedziela
         </Text>
         <DeparturesList type="sunday" direction="destination" />
       </Flex>
 
       <Flex alignItems="center">
-        <Text color="accentSuperDark">
+        <Text color="primaryDark">
           {line.destination} - {line.entry}
         </Text>
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Dni tygodnia
         </Text>
         <DeparturesList type="week" direction="entry" />
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Sobota
         </Text>
         <DeparturesList type="saturday" direction="entry" />
-        <Text color="primarySuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Niedziela
         </Text>
         <DeparturesList type="sunday" direction="entry" />

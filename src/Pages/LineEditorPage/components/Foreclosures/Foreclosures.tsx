@@ -16,7 +16,7 @@ const Foreclosures = () => {
           {foreclosures.map((foreclosure) => (
             <tr key={foreclosure._id}>
               <td>
-                <Text center color="accentDark">
+                <Text center color="primaryDark">
                   {foreclosure.symbol}
                 </Text>
               </td>

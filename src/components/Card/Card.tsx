@@ -1,25 +1,13 @@
-import styled, { css } from 'styled-components';
-
-export const topBar = css`
-  position: relative;
-  overflow: hidden;
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: ${({ theme }) => theme.colors.primarySuperDark};
-    height: 15px;
-    width: 100%;
-  }
-`;
+import styled from 'styled-components';
+import { topBar } from 'styles/common';
 
 const Card = styled.div`
   padding: 20px;
-  background: ${({ theme }) => theme.colors.primaryDark};
+  background: white;
+  color: ${({ theme }) => theme.colors.primaryDark};
+  box-shadow: ${({ theme }) => theme.shadow};
   border-radius: ${({ theme }) => theme.radius};
-  color: ${({ theme }) => theme.colors.primarySuperLight};
-  ${topBar}
+  ${topBar('primaryDark')}
 `;
 
 export default Card;

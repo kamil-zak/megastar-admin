@@ -6,7 +6,7 @@ import { Wrapper } from './PageHeader.styles';
 const PageHeader: FC<{ title: string }> = ({ children, title }) => {
   return (
     <Wrapper>
-      <Text size="base" sizeMd="xl" color="accentSuperDark">
+      <Text size="base" sizeMd="xl" color="primaryDark">
         {title}
       </Text>
       <Flex direction="row">{children}</Flex>

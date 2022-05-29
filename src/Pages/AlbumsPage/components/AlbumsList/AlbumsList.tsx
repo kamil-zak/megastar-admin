@@ -30,7 +30,7 @@ const AlbumsList = () => {
         </Sortable>
       ))}
       {!albums.length && (
-        <Text color="accentSuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Brak albumów. Dodaj pierwszy!
         </Text>
       )}

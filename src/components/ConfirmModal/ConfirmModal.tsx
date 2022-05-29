@@ -17,7 +17,9 @@ const ConfirmModal = () => {
       <Flex alignItems="flex-end">
         {confirm.question}
         <Flex direction="row" gap={10}>
-          <Button onClick={cancel}>Anuluj</Button>
+          <Button onClick={cancel} bordered>
+            Anuluj
+          </Button>
           <Button danger onClick={accept}>
             {confirm.actionName}
           </Button>

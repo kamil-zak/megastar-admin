@@ -32,9 +32,7 @@ const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
       <StyledLogo />
       <StyledLoginInfo>
         <IconButton icon={faUser} size="lg" />
-        <Text size="s" color="primarySuperLight">
-          {user}
-        </Text>
+        <Text size="s">{user}</Text>
       </StyledLoginInfo>
       <Flex>
         <NavigationLink icon={faTable} text="Rozkład jazdy" to={ROUTES.timetable} />

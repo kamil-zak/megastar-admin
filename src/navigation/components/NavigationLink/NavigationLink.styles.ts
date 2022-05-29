@@ -10,5 +10,5 @@ export const StyledNavLink = styled(NavLink).attrs(({ theme }) => ({
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.accentSuperLight};
+  color: white;
 `;

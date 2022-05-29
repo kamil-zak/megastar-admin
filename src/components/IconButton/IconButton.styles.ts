@@ -12,15 +12,15 @@ export const Wrapper = styled.div<IWrapperProps>`
   height: ${({ size }) => size}px;
   padding: ${({ size }) => size / 2}px;
   font-size: ${({ size }) => size}px;
-  background: ${({ theme }) => theme.colors.accentSuperDark};
-  color: ${({ theme }) => theme.colors.accentSuperLight};
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
   border-radius: 50%;
   cursor: pointer;
 
   ${breakpoints.md} {
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   }
-  opacity: 0.8;
+  opacity: 0.9;
 
   &:hover {
     transform: scale(1.2);

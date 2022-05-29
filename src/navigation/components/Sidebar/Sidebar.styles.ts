@@ -13,6 +13,8 @@ export const Wrapper = styled.div<IWrapperProps>`
   padding: 50px 0px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.primaryDark};
+  background: #495d63;
+  background: #22333b;
   position: relative;
 
   transition: transform 0.3s linear;
@@ -32,7 +34,7 @@ export const StyledOpenBtn = styled.button<IWrapperProps>`
   position: absolute;
   top: 100px;
   right: -30px;
-  border: 2px solid ${({ theme }) => theme.colors.primarySuperDark};
+  border: 2px solid ${({ theme }) => theme.colors.primaryDark};
   border-left: none;
 
   cursor: pointer;
@@ -61,4 +63,5 @@ export const StyledLoginInfo = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: white;
 `;

@@ -29,7 +29,7 @@ const Lines = () => {
         </Sortable>
       ))}
       {!lines.length && (
-        <Text color="accentSuperDark" size="s">
+        <Text color="primaryDark" size="s">
           Brak linii. Dodaj pierwszą!
         </Text>
       )}

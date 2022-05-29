@@ -20,7 +20,7 @@ const Loader: FC<ILoaderProps> = ({ controllers, children }) => {
   if (isFailed)
     return (
       <Flex alignItems="center">
-        <Text color="primarySuperDark">
+        <Text color="primaryDark">
           <FontAwesomeIcon icon={faExclamationTriangle} size="5x" />
         </Text>
         <Text center color="danger">

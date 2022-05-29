@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div<{ hover: boolean }>`
   position: relative;
-  border: 2px dashed ${({ theme }) => theme.colors.accentDark};
-  color: ${({ theme }) => theme.colors.primarySuperDark};
+  border: 2px dashed ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.primaryDark};
   padding: 50px;
   border-radius: ${({ theme }) => theme.radius};
   display: flex;
@@ -14,7 +14,7 @@ export const Wrapper = styled.div<{ hover: boolean }>`
   ${({ hover }) =>
     hover &&
     css`
-      background: ${({ theme }) => theme.colors.accentLight};
+      background: white;
       &
     `}
 `;
@@ -33,5 +33,5 @@ export const HoverText = styled.div`
   left: 50%;
   transform: translateX(-50%);
   font-size: ${({ theme }) => theme.fontSizes.base};
-  color: ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.primary};
 `;

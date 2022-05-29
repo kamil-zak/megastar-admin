@@ -2,19 +2,10 @@ import { DefaultTheme } from 'styled-components';
 
 const theme: DefaultTheme = {
   colors: {
-    primarySuperLight: '#F5F8FF',
-    primaryLight: '#ADBBD3',
-    primary: '#475D83',
-    primaryDark: '#25395A',
-    primarySuperDark: '#091E41',
-    accentSuperLight: '#faebeb',
-    accentLight: '#E6C0C0',
-    accent: '#DCA6A6',
-    accentDark: '#A55D5D',
-    accentSuperDark: '#5C333E',
-    successLight: '#effaf5',
+    primaryLight: '#F5F8F6',
+    primary: '#57A773',
+    primaryDark: '#22333B',
     success: '#257953',
-    dangerLight: '#FEECF0',
     danger: '#DF5873',
   },
   fontSizes: {
@@ -26,6 +17,7 @@ const theme: DefaultTheme = {
     xl: '3.6rem',
   },
   radius: '10px',
+  shadow: '0 3px 7px rgba(0, 0, 0, 0.3)',
 };
 
 export default theme;

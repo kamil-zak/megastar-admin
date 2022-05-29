@@ -5,7 +5,7 @@ const Select = styled.select`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   background-color: white;
   border: 1px solid ${({ theme }) => theme.colors.primaryDark};
-  color: ${({ theme }) => theme.colors.primarySuperDark};
+  color: ${({ theme }) => theme.colors.primaryDark};
   border-radius: ${({ theme }) => theme.radius};
   appearance: button;
   -webkit-appearance: button;

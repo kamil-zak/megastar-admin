@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: relative;
   padding: 15px;
-  background: ${({ theme }) => theme.colors.accentDark};
-  color: ${({ theme }) => theme.colors.accentSuperLight};
+  background: ${({ theme }) => theme.colors.primaryDark};
+  color: white;
   border-radius: ${({ theme }) => theme.radius};
 
   transition: transform 0.2s ease-in-out;

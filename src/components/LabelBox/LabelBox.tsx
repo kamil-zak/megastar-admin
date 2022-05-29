@@ -9,7 +9,7 @@ interface ILabelBoxProps {
 const LabelBox: FC<ILabelBoxProps> = ({ text, children }) => {
   return (
     <Flex gap={0}>
-      <StyledText size="xs" color="primarySuperDark">
+      <StyledText size="xs" color="primaryDark">
         {text}
       </StyledText>
       {children}

@@ -7,7 +7,6 @@ export const StyledContent = styled.div`
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  background-color: ${({ theme }) => theme.colors.primarySuperLight};
   ${breakpoints.md} {
     margin-left: 250px;
   }

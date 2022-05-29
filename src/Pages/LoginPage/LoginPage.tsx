@@ -49,10 +49,10 @@ const LoginPage = () => {
         <Form onSubmit={signIn}>
           <Flex gap={20}>
             <Flex gap={5} alignItems="center">
-              <Text size="xl" color="accentSuperDark">
+              <Text size="xl" color="primaryDark">
                 Witaj!
               </Text>
-              <Text size="s" color="accentDark">
+              <Text size="s" color="primaryDark">
                 Aby kontynuować podaj login oraz hasło.
               </Text>
             </Flex>
